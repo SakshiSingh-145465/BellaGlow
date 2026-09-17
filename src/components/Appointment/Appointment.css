@@ -1,0 +1,753 @@
+.appointment-section {
+  padding: 110px 0;
+  background: var(--color-ivory);
+}
+
+.appointment-container {
+  width: min(100% - 40px, var(--container-width));
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.appointment-header {
+  margin-bottom: 60px;
+}
+
+.appointment-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+
+  color: var(--color-rose);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.appointment-label span {
+  width: 28px;
+  height: 1px;
+  background: var(--color-rose);
+}
+
+.appointment-header h2 {
+  margin: 0 0 20px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.appointment-header h2 em {
+  color: var(--color-rose);
+  font-style: italic;
+}
+
+.appointment-header p {
+  max-width: 470px;
+  margin: 0;
+
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.appointment-form {
+  padding: 48px;
+
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+
+  color: var(--color-charcoal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.form-group label span {
+  color: var(--color-light-text);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 18px;
+
+  background: var(--color-ivory);
+  border: 1px solid var(--color-border);
+
+  outline: none;
+
+  color: var(--color-charcoal);
+  font-size: 0.9rem;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-light-text);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-rose);
+  box-shadow: 0 0 0 3px rgba(185, 120, 123, 0.08);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input[type="date"] {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   TIME PICKER
+========================================= */
+
+.time-picker {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+}
+
+
+/* CLOSED BOX */
+
+.time-picker-trigger {
+  width: 100%;
+  min-height: 56px;
+
+  padding: 10px 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: var(--color-ivory);
+  border: 1px solid var(--color-border);
+
+  color: var(--color-charcoal);
+  text-align: left;
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
+}
+
+.time-picker-trigger:hover,
+.time-picker-trigger.open {
+  border-color: var(--color-rose);
+  box-shadow: 0 0 0 3px rgba(185, 120, 123, 0.08);
+}
+
+.time-picker-trigger.has-value {
+  border-color: var(--color-rose);
+  background: var(--color-white);
+}
+
+.time-picker-trigger-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.time-picker-label {
+  color: var(--color-charcoal);
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.time-picker-trigger:not(.has-value) .time-picker-label {
+  color: var(--color-light-text);
+  font-weight: 500;
+}
+
+.time-picker-count {
+  color: var(--color-rose);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.time-picker-arrow {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  color: var(--color-charcoal);
+  font-size: 1rem;
+  line-height: 1;
+
+  transition: transform 200ms ease;
+}
+
+.time-picker-arrow.rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =========================================
+   OPEN TIME DROPDOWN
+========================================= */
+
+.time-picker-dropdown {
+  position: absolute;
+  z-index: 100;
+
+  top: calc(100% + 8px);
+  left: 0;
+
+  width: 100%;
+  max-height: 360px;
+
+  overflow-y: auto;
+
+  padding: 7px;
+
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* SCROLLBAR */
+
+.time-picker-dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+.time-picker-dropdown::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+.time-picker-dropdown::-webkit-scrollbar-thumb {
+  background: var(--color-blush);
+  border-radius: 10px;
+}
+
+
+/* EACH TIME OPTION */
+
+.time-dropdown-option {
+  width: 100%;
+  min-height: 54px;
+
+  padding: 10px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: var(--color-white);
+  border: 1px solid transparent;
+
+  color: var(--color-charcoal);
+  text-align: left;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.time-dropdown-option:hover:not(:disabled) {
+  background: var(--color-cream);
+  border-color: var(--color-blush);
+}
+
+.time-dropdown-option.selected {
+  background: var(--color-cream);
+  border-color: var(--color-rose);
+}
+
+.time-dropdown-option.full {
+  background: #f5eeeb;
+  border-color: #e4d8d3;
+
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* TIME TEXT */
+
+.time-option-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.time-option-main svg {
+  flex-shrink: 0;
+
+  color: var(--color-rose);
+  font-size: 16px;
+}
+
+.time-option-range {
+  color: var(--color-charcoal);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* BOOKING COUNT */
+
+.time-option-count {
+  flex-shrink: 0;
+
+  min-width: 42px;
+
+  text-align: right;
+
+  color: var(--color-charcoal);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.time-dropdown-option.full .time-option-count {
+  color: var(--color-error);
+}
+
+
+/* =========================================
+   EMPTY / LOADING TIME
+========================================= */
+
+.time-empty {
+  min-height: 56px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 12px 16px;
+
+  background: var(--color-ivory);
+  border: 1px solid var(--color-border);
+
+  color: var(--color-light-text);
+  font-size: 0.78rem;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.appointment-error {
+  margin-bottom: 25px;
+  padding: 14px 16px;
+
+  background: rgba(169, 87, 87, 0.07);
+  border: 1px solid rgba(169, 87, 87, 0.2);
+
+  color: var(--color-error);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   FORM FOOTER
+========================================= */
+
+.appointment-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid var(--color-border);
+}
+
+.appointment-form-footer p {
+  max-width: 390px;
+
+  color: var(--color-light-text);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.appointment-submit {
+  min-width: 240px;
+
+  padding: 17px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+
+  background: var(--color-charcoal);
+  color: var(--color-white);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.appointment-submit svg {
+  font-size: 18px;
+
+  transition: transform var(--transition);
+}
+
+.appointment-submit:hover:not(:disabled) {
+  background: var(--color-deep-rose);
+  transform: translateY(-2px);
+}
+
+.appointment-submit:hover:not(:disabled) svg {
+  transform: translate(4px, -4px);
+}
+
+.appointment-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.appointment-success {
+  min-height: 500px;
+
+  padding: 70px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border: 1px solid var(--color-rose);
+  border-radius: 50%;
+
+  color: var(--color-rose);
+  font-size: 26px;
+}
+
+.success-label {
+  margin-bottom: 20px;
+
+  color: var(--color-rose);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.success-content > span {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--color-rose);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.appointment-success h3 {
+  margin-bottom: 18px;
+
+  font-family: var(--font-heading);
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.appointment-success h3 em {
+  color: var(--color-rose);
+  font-style: italic;
+}
+
+.appointment-success p {
+  max-width: 450px;
+
+  margin: 0 auto 30px;
+
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   SUCCESS DETAILS
+========================================= */
+
+.success-details {
+  width: 100%;
+  max-width: 650px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin: 0 auto 35px;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.success-details > div {
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  text-align: center;
+}
+
+.success-details > div + div {
+  border-left: 1px solid var(--color-border);
+}
+
+.success-details small {
+  color: var(--color-light-text);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.success-details strong {
+  color: var(--color-charcoal);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BOOK ANOTHER
+========================================= */
+
+.book-another {
+  padding: 16px 22px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  background: var(--color-charcoal);
+  color: var(--color-white);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.book-another svg {
+  font-size: 17px;
+}
+
+.book-another:hover {
+  background: var(--color-deep-rose);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .appointment-form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-submit {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .appointment-section {
+    padding: var(--section-space-mobile) 0;
+  }
+
+  .appointment-container {
+    width: min(100% - 30px, var(--container-width));
+  }
+
+  .appointment-header {
+    margin-bottom: 40px;
+  }
+
+  .appointment-header h2 {
+    font-size: 3.1rem;
+  }
+
+  .appointment-header p {
+    font-size: 0.88rem;
+  }
+
+  .appointment-form {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .form-group.full-width {
+    margin-bottom: 25px;
+  }
+
+  .appointment-form-footer {
+    gap: 20px;
+  }
+
+  .appointment-submit {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* TIME PICKER MOBILE */
+
+  .time-picker-trigger {
+    min-height: 56px;
+    padding: 10px 14px;
+  }
+
+  .time-picker-dropdown {
+    max-height: 300px;
+  }
+
+  .time-dropdown-option {
+    min-height: 52px;
+    padding: 9px 12px;
+  }
+
+  .time-option-range {
+    font-size: 0.76rem;
+  }
+
+  .time-option-main {
+    gap: 8px;
+  }
+
+  /* SUCCESS MOBILE */
+
+  .appointment-success {
+    min-height: 450px;
+    padding: 50px 20px;
+  }
+
+  .appointment-success h3 {
+    font-size: 3rem;
+  }
+
+  .success-details {
+    grid-template-columns: 1fr;
+  }
+
+  .success-details > div + div {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .book-another {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

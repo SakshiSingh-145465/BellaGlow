@@ -1,0 +1,548 @@
+/* =========================================================
+   BELLAGLOW HERO - FINAL
+========================================================= */
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  padding: 55px 0 70px;
+  background: var(--color-ivory);
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+
+  width: min(100% - 40px, 1450px);
+  min-height: 700px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+
+  gap: 55px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-left: 5px;
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 34px;
+
+  color: var(--color-rose);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.hero-label span {
+  display: block;
+
+  width: 38px;
+  height: 1px;
+
+  background: var(--color-rose);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.hero h1 {
+  margin: 0;
+
+  color: var(--color-charcoal);
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(4rem, 6vw, 6.6rem);
+
+  font-weight: 600;
+
+  line-height: 0.89;
+
+  letter-spacing: -0.035em;
+}
+
+.hero h1 em {
+  color: var(--color-rose);
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+  max-width: 610px;
+
+  margin: 42px 0 0;
+
+  color: var(--color-muted);
+
+  font-size: 0.96rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: stretch;
+
+  margin-top: 38px;
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  min-width: 230px;
+
+  padding: 17px 22px;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    color 250ms ease;
+}
+
+.hero-primary-button {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.hero-primary-button:hover {
+  background: var(--color-deep-rose);
+  transform: translateY(-2px);
+}
+
+.hero-secondary-button {
+  background: transparent;
+
+  color: var(--color-charcoal);
+
+  border: 1px solid var(--color-border);
+}
+
+.hero-secondary-button:hover {
+  background: var(--color-cream);
+
+  transform: translateY(-2px);
+}
+
+.hero-primary-button svg,
+.hero-secondary-button svg {
+  flex-shrink: 0;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   RIGHT IMAGE AREA
+========================================================= */
+
+.hero-visual {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.hero-image-wrap {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100%, 720px);
+  height: 650px;
+
+  overflow: hidden;
+
+  border-radius:
+    150px
+    150px
+    75px
+    75px;
+
+  background: var(--color-cream);
+
+  box-shadow:
+    0 25px 60px rgba(62, 43, 43, 0.12);
+}
+
+.hero-image-wrap img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 700ms ease;
+}
+
+.hero-image-wrap:hover img {
+  transform: scale(1.02);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.hero-image-glow {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03),
+      transparent 45%,
+      rgba(48, 43, 43, 0.08)
+    );
+}
+
+
+/* =========================================================
+   YEARS BADGE
+========================================================= */
+
+.hero-stat {
+  position: absolute;
+
+  z-index: 5;
+
+  right: -5px;
+  bottom: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  min-width: 190px;
+
+  padding: 22px 25px;
+
+  background: rgba(251, 247, 242, 0.97);
+
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-stat strong {
+  color: var(--color-rose);
+
+  font-family: var(--font-heading);
+
+  font-size: 2.6rem;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.hero-stat div {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.hero-stat span {
+  color: var(--color-charcoal);
+
+  font-size: 0.63rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.hero-stat small {
+  margin-top: 5px;
+
+  color: var(--color-muted);
+
+  font-size: 0.6rem;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.hero-decoration {
+  position: absolute;
+
+  border: 1px solid rgba(185, 120, 123, 0.16);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.hero-decoration-one {
+  width: 620px;
+  height: 620px;
+
+  top: -90px;
+  right: -170px;
+}
+
+.hero-decoration-two {
+  width: 420px;
+  height: 420px;
+
+  bottom: -100px;
+  left: -80px;
+}
+
+
+/* =========================================================
+   LARGE SCREEN
+========================================================= */
+
+@media (min-width: 1500px) {
+  .hero-container {
+    min-height: 760px;
+  }
+
+  .hero-visual {
+    min-height: 700px;
+  }
+
+  .hero-image-wrap {
+    height: 700px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding: 45px 0 60px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 0.9fr;
+
+    gap: 30px;
+
+    min-height: 620px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.6rem, 6vw, 5.5rem);
+  }
+
+  .hero-description {
+    max-width: 500px;
+  }
+
+  .hero-visual {
+    min-height: 560px;
+  }
+
+  .hero-image-wrap {
+    height: 560px;
+
+    border-radius:
+      120px
+      120px
+      60px
+      60px;
+  }
+
+  .hero-stat {
+    right: -10px;
+    bottom: 20px;
+  }
+
+  .hero-decoration-one {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+
+    padding: 45px 0 65px;
+  }
+
+  .hero-container {
+    width: min(100% - 30px, var(--container-width));
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: auto;
+
+    gap: 45px;
+  }
+
+  .hero-content {
+    padding-left: 0;
+  }
+
+  .hero-label {
+    margin-bottom: 25px;
+
+    font-size: 0.64rem;
+  }
+
+  .hero-label span {
+    width: 25px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.3rem, 14vw, 5rem);
+
+    line-height: 0.9;
+  }
+
+  .hero-description {
+    margin-top: 30px;
+
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    margin-top: 30px;
+  }
+
+  .hero-primary-button,
+  .hero-secondary-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .hero-visual {
+    width: 100%;
+
+    min-height: 440px;
+  }
+
+  .hero-image-wrap {
+    width: 100%;
+
+    height: 440px;
+
+    border-radius:
+      85px
+      85px
+      45px
+      45px;
+  }
+
+  .hero-stat {
+    right: 5px;
+    bottom: 15px;
+
+    min-width: 165px;
+
+    padding: 17px 18px;
+  }
+
+  .hero-stat strong {
+    font-size: 2.2rem;
+  }
+
+  .hero-stat span {
+    font-size: 0.58rem;
+  }
+
+  .hero-stat small {
+    font-size: 0.55rem;
+  }
+
+  .hero-decoration-one {
+    width: 330px;
+    height: 330px;
+
+    top: -35px;
+    right: -100px;
+  }
+
+  .hero-decoration-two {
+    width: 250px;
+    height: 250px;
+
+    bottom: -50px;
+    left: -90px;
+  }
+}

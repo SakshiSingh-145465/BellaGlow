@@ -1,0 +1,711 @@
+/* =========================================================
+   BELLAGLOW - APP CSS
+   Services + Contact + Footer
+========================================================= */
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section {
+  padding: var(--section-space) 0;
+  background: var(--color-ivory);
+}
+
+.services-section .section-heading {
+  width: min(100% - 40px, var(--container-width));
+  margin: 0 auto 60px;
+}
+
+.services-section .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-rose);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.services-section .section-label span {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.services-heading-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: end;
+  margin-top: 26px;
+}
+
+.services-heading-row h2 {
+  margin: 0;
+  color: var(--color-charcoal);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+}
+
+.services-heading-row h2 em {
+  color: var(--color-rose);
+  font-style: italic;
+}
+
+.services-heading-row p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+========================================================= */
+
+.services-grid {
+  width: min(100% - 40px, var(--container-width));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-image {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  overflow: hidden;
+  background: var(--color-cream);
+}
+
+.service-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-number {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--color-charcoal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content {
+  padding: 28px 28px 30px;
+}
+
+.service-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  background: var(--color-blush);
+  color: var(--color-deep-rose);
+  font-size: 1.05rem;
+}
+
+.service-content h3 {
+  margin: 0 0 12px;
+  color: var(--color-charcoal);
+  font-family: var(--font-heading);
+  font-size: 2.15rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.service-content p {
+  min-height: 55px;
+  margin: 0 0 24px;
+  color: var(--color-muted);
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERVICE INFO
+========================================================= */
+
+.service-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.service-info span {
+  color: var(--color-light-text);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.service-info strong {
+  color: var(--color-charcoal);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SERVICE BOOK BUTTON
+========================================================= */
+
+.service-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 17px;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition),
+    transform var(--transition);
+}
+
+.service-button b {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.service-button:hover {
+  background: var(--color-deep-rose);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+  padding: var(--section-space) 0;
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.contact-container {
+  width: min(100% - 40px, var(--container-width));
+  margin: 0 auto;
+}
+
+.contact-header {
+  margin-bottom: 65px;
+}
+
+.contact-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-blush);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.contact-label span {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.contact-heading-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: end;
+  margin-top: 28px;
+}
+
+.contact-heading-row h2 {
+  margin: 0;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.contact-heading-row h2 em {
+  color: var(--color-blush);
+  font-style: italic;
+}
+
+.contact-heading-row p {
+  max-width: 430px;
+  margin: 0;
+  padding-bottom: 8px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+========================================================= */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.contact-info-card {
+  position: relative;
+  min-height: 325px;
+  padding: 32px 28px 36px;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  transition: background 250ms ease;
+}
+
+.contact-info-card:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.contact-card-number {
+  display: block;
+  margin-bottom: 50px;
+  color: rgba(255, 255, 255, 0.36);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.contact-card-label {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--color-blush);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.contact-info-card h3 {
+  margin: 0 0 22px;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.contact-info-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.contact-info-card a {
+  display: inline-block;
+  margin-bottom: 17px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition:
+    color 250ms ease,
+    border-color 250ms ease;
+}
+
+.contact-info-card a:hover {
+  color: var(--color-blush);
+  border-color: var(--color-blush);
+}
+
+
+/* =========================================================
+   CONTACT BOTTOM CTA
+========================================================= */
+
+.contact-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 50px;
+}
+
+.contact-bottom-text span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-blush);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.contact-bottom-text p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.92rem;
+}
+
+.contact-book-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-width: 245px;
+  padding: 17px 20px;
+  background: var(--color-blush);
+  color: var(--color-charcoal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition:
+    transform 250ms ease,
+    background 250ms ease;
+}
+
+.contact-book-button b {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.contact-book-button:hover {
+  background: var(--color-white);
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 32px 40px;
+  background: #252121;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo > span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: var(--color-blush);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+}
+
+.footer-logo div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo strong {
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.footer-logo small {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   FOOTER RIGHT CONTENT
+========================================================= */
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.footer-content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.73rem;
+}
+
+
+/* =========================================================
+   ADMIN LOGIN LINK
+========================================================= */
+
+.footer-admin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-width: 160px;
+  height: 48px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(232, 201, 200, 0.32);
+
+  color: var(--color-blush);
+  background: transparent;
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.footer-admin-link span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.footer-admin-link:hover {
+  background: var(--color-blush);
+  border-color: var(--color-blush);
+  color: var(--color-charcoal);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .services-heading-row,
+  .contact-heading-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .services-heading-row p,
+  .contact-heading-row p {
+    max-width: 600px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer {
+    align-items: flex-start;
+  }
+
+  .footer-content {
+    align-items: flex-end;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .services-section,
+  .contact-section {
+    padding: var(--section-space-mobile) 0;
+  }
+
+  .services-section .section-heading,
+  .services-grid,
+  .contact-container {
+    width: min(100% - 30px, var(--container-width));
+  }
+
+  .services-section .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .services-heading-row,
+  .contact-heading-row {
+    margin-top: 20px;
+  }
+
+  .services-heading-row h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .contact-heading-row h2 {
+    font-size: clamp(3rem, 16vw, 4.7rem);
+  }
+
+  .services-heading-row p,
+  .contact-heading-row p {
+    font-size: 0.88rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-image {
+    height: 300px;
+  }
+
+  .service-content {
+    padding: 25px 22px 25px;
+  }
+
+  .service-content h3 {
+    font-size: 2rem;
+  }
+
+  .contact-header {
+    margin-bottom: 45px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info-card {
+    min-height: auto;
+    padding: 30px 24px 35px;
+  }
+
+  .contact-card-number {
+    margin-bottom: 35px;
+  }
+
+  .contact-info-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .contact-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .contact-book-button {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    width: 100%;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-content p {
+    line-height: 1.6;
+  }
+
+  .footer-admin-link {
+    min-width: 150px;
+    height: 46px;
+    padding: 0 14px;
+  }
+}

@@ -1,0 +1,692 @@
+/* =========================================================
+   BELLA GLOW ADMIN PANEL
+   ========================================================= */
+
+.admin-section {
+  min-height: 100vh;
+  padding: 90px 0 110px;
+  background: #f4ebe3;
+}
+
+.admin-container {
+  width: min(100% - 40px, 1400px);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.admin-topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.admin-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #b76d72;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.admin-topbar h1 {
+  margin-bottom: 10px;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.admin-topbar p {
+  color: #716968;
+  font-size: 14px;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-refresh,
+.admin-logout {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border: 1px solid #d8c9c3;
+  background: #fbf7f3;
+  color: #514a47;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.admin-refresh:hover {
+  background: #302b2a;
+  border-color: #302b2a;
+  color: #ffffff;
+}
+
+.admin-logout {
+  background: #302b2a;
+  border-color: #302b2a;
+  color: #ffffff;
+}
+
+.admin-logout:hover {
+  background: #a65e65;
+  border-color: #a65e65;
+}
+
+.admin-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   WELCOME
+   ========================================================= */
+
+.admin-welcome {
+  margin-bottom: 25px;
+  padding: 15px 18px;
+  border: 1px solid #e1d5cf;
+  background: #fbf7f3;
+  color: #716968;
+  font-size: 13px;
+}
+
+.admin-welcome strong {
+  color: #302b2a;
+}
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.admin-stat-card {
+  padding: 25px;
+  background: #fbf7f3;
+  border: 1px solid #e1d5cf;
+}
+
+.admin-stat-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  border: 1px solid #d9c5c0;
+  border-radius: 50%;
+  color: #a65e65;
+}
+
+.admin-stat-card span {
+  display: block;
+  margin-bottom: 8px;
+  color: #8b7d79;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.admin-stat-card strong {
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 500;
+}
+
+/* =========================================================
+   HOURLY CAPACITY CARD
+   ========================================================= */
+
+.admin-capacity-card {
+  margin-bottom: 25px;
+  padding: 30px;
+  background: #fbf7f3;
+  border: 1px solid #e1d5cf;
+}
+
+.admin-capacity-info {
+  margin-bottom: 28px;
+}
+
+.admin-capacity-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #b76d72;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.admin-capacity-info h2 {
+  margin-bottom: 8px;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.admin-capacity-info p {
+  color: #716968;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DATE + HOUR SELECT
+   ========================================================= */
+
+.admin-capacity-hours {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(280px, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.admin-capacity-date,
+.admin-capacity-hour {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.admin-capacity-hours-label {
+  display: block;
+  color: #716968;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.admin-date-input,
+.admin-hour-select {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  border: 1px solid #d8c9c3;
+  border-radius: 0;
+  outline: none;
+  background: #ffffff;
+  color: #302b2a;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admin-date-input:hover,
+.admin-hour-select:hover {
+  border-color: #b9787b;
+}
+
+.admin-date-input:focus,
+.admin-hour-select:focus {
+  border-color: #b9787b;
+  box-shadow: 0 0 0 3px rgba(185, 120, 123, 0.12);
+}
+
+/* Custom dropdown arrow */
+
+.admin-hour-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 46px;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #b9787b 50%
+    ),
+    linear-gradient(
+      135deg,
+      #b9787b 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 20px) 22px,
+    calc(100% - 14px) 22px;
+
+  background-size:
+    6px 6px,
+    6px 6px;
+
+  background-repeat: no-repeat;
+}
+
+.admin-hour-select option {
+  font-family: var(--font-body);
+  color: #302b2a;
+  background: #ffffff;
+}
+
+/* =========================================================
+   SELECTED HOUR
+   ========================================================= */
+
+.admin-capacity-control {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.admin-capacity-number {
+  min-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 24px;
+  border: 1px solid #d8c9c3;
+  background: #ffffff;
+}
+
+.admin-capacity-number > div {
+  text-align: center;
+}
+
+.admin-capacity-number strong {
+  display: block;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.admin-capacity-number span {
+  display: block;
+  margin-top: 7px;
+  color: #8b7d79;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   CAPACITY STATUS
+   ========================================================= */
+
+.admin-capacity-status {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.admin-capacity-status > div {
+  padding: 18px;
+  border: 1px solid #e1d5cf;
+  background: #f4ebe3;
+}
+
+.admin-capacity-status span {
+  display: block;
+  margin-bottom: 7px;
+  color: #8b7d79;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.admin-capacity-status strong {
+  display: block;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+/* =========================================================
+   CAPACITY BAR
+   ========================================================= */
+
+.admin-capacity-bar {
+  width: 100%;
+  height: 5px;
+  overflow: hidden;
+  background: #e5d9d2;
+}
+
+.admin-capacity-bar span {
+  display: block;
+  height: 100%;
+  background: #b9787b;
+  transition: width 0.35s ease;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.admin-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 14px 18px;
+  border: 1px solid #d7a8a8;
+  background: #fff5f5;
+  color: #a95757;
+  font-size: 13px;
+}
+
+/* =========================================================
+   APPOINTMENTS TABLE
+   ========================================================= */
+
+.admin-table-card {
+  overflow: hidden;
+  background: #fbf7f3;
+  border: 1px solid #e1d5cf;
+}
+
+.admin-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 28px;
+  border-bottom: 1px solid #e1d5cf;
+}
+
+.admin-table-header > div > span {
+  color: #b76d72;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.admin-table-header h2 {
+  margin-top: 7px;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.admin-count {
+  color: #8b7d79;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 1100px;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  padding: 15px 18px;
+  background: #f4ebe3;
+  color: #81736f;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.admin-table td {
+  padding: 19px 18px;
+  border-bottom: 1px solid #e9dfd9;
+  color: #514a47;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+  background: #fffaf7;
+}
+
+/* =========================================================
+   CUSTOMER
+   ========================================================= */
+
+.customer-name {
+  margin-bottom: 4px;
+  color: #302b2a;
+  font-weight: 700;
+}
+
+.customer-email {
+  color: #968985;
+  font-size: 10px;
+}
+
+/* =========================================================
+   SERVICE
+   ========================================================= */
+
+.service-name {
+  color: #a65e65;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.appointment-message {
+  display: block;
+  max-width: 180px;
+  color: #716968;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.status-select {
+  min-width: 115px;
+  padding: 9px 10px;
+  border: 1px solid #d8c9c3;
+  outline: none;
+  background: #ffffff;
+  color: #514a47;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.status-select:focus {
+  border-color: #b76d72;
+}
+
+.status-pending {
+  color: #8b6a45;
+}
+
+.status-confirmed {
+  color: #607d63;
+}
+
+.status-completed {
+  color: #536b79;
+}
+
+.status-cancelled {
+  color: #a95757;
+}
+
+/* =========================================================
+   LOADING / EMPTY
+   ========================================================= */
+
+.admin-loading,
+.admin-empty {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #8b7d79;
+}
+
+.admin-loading svg {
+  width: 25px;
+  height: 25px;
+  animation: admin-spin 1s linear infinite;
+}
+
+.admin-empty svg {
+  width: 38px;
+  height: 38px;
+  color: #b76d72;
+}
+
+.admin-empty h3 {
+  margin-top: 5px;
+  color: #302b2a;
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.admin-empty p {
+  font-size: 13px;
+}
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-capacity-hours {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-capacity-control {
+    flex-direction: column;
+  }
+
+  .admin-capacity-number {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .admin-section {
+    padding: 65px 0 80px;
+  }
+
+  .admin-container {
+    width: min(100% - 30px, 1400px);
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .admin-refresh,
+  .admin-logout {
+    width: 100%;
+  }
+
+  .admin-capacity-card {
+    padding: 22px;
+  }
+
+  .admin-capacity-info h2 {
+    font-size: 30px;
+  }
+
+  .admin-capacity-hours {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-date-input,
+  .admin-hour-select {
+    height: 52px;
+  }
+
+  .admin-capacity-control {
+    flex-direction: column;
+  }
+
+  .admin-capacity-number {
+    width: 100%;
+  }
+
+  .admin-capacity-status {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-table-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-table-header h2 {
+    font-size: 30px;
+  }
+}

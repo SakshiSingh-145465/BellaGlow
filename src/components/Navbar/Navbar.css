@@ -1,0 +1,607 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  padding: 14px 16px;
+
+  background: #f7eee8;
+}
+
+.navbar-inner {
+  width: 100%;
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  background: #fbf7f3;
+
+  border: 1px solid #e6dcd6;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   BELLA GLOW
+========================= */
+
+.brand {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0;
+  margin-left: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.brand-circle {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #bc7479;
+  border-radius: 50%;
+
+  color: #a65e65;
+
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.brand-info strong {
+  color: #332e2c;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 26px;
+  font-weight: 400;
+
+  line-height: 1;
+}
+
+.brand-info small {
+  margin-top: 6px;
+
+  color: #b76d72;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 27px;
+
+  margin-left: 45px;
+
+  flex: 1;
+}
+
+.nav-link {
+  position: relative;
+
+  padding: 30px 0 27px;
+
+  border: none;
+  background: transparent;
+
+  color: #6d6663;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+}
+
+.nav-link::after {
+  position: absolute;
+
+  left: 0;
+  bottom: 18px;
+
+  width: 0;
+  height: 1px;
+
+  background: #b76d72;
+
+  content: "";
+
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #a65e65;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* =========================
+   RIGHT ACTIONS
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-left: auto;
+}
+
+/* =========================
+   LOGIN / LOGOUT
+========================= */
+
+.auth-nav-button {
+  flex-shrink: 0;
+
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 15px;
+
+  border: 1px solid #d8c9c3;
+
+  background: transparent;
+
+  color: #514a47;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.9px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.auth-nav-button svg {
+  width: 15px;
+  height: 15px;
+
+  stroke-width: 1.8;
+}
+
+.auth-nav-button:hover {
+  background: #302b2a;
+
+  border-color: #302b2a;
+
+  color: white;
+}
+
+/* =========================
+   BOOK APPOINTMENT
+========================= */
+
+.book-button {
+  flex-shrink: 0;
+
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 0 22px;
+
+  border: 1px solid #302b2a;
+
+  background: #302b2a;
+
+  color: white;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.book-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+.book-button:hover {
+  background: #a65e65;
+
+  border-color: #a65e65;
+}
+
+/* =========================
+   VISIT OUR SALON
+========================= */
+
+.visit-salon {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #706866;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.visit-salon:hover {
+  color: #a65e65;
+}
+
+.visit-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #b86d72;
+
+  border-radius: 50%;
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfd0ca;
+
+  background: transparent;
+
+  color: #302b2a;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+  display: none;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1200px) {
+  .navbar-inner {
+    padding: 0 18px;
+  }
+
+  .desktop-nav {
+    margin-left: 25px;
+
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+
+  .auth-nav-button {
+    padding: 0 12px;
+
+    font-size: 8px;
+  }
+
+  .book-button {
+    padding: 0 15px;
+
+    font-size: 8px;
+  }
+
+  .visit-salon {
+    font-size: 9px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-inner {
+    min-height: 68px;
+
+    justify-content: space-between;
+
+    padding: 0 15px;
+  }
+
+  .desktop-nav,
+  .navbar-actions {
+    display: none;
+  }
+
+  .brand {
+    margin-left: 0;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 10px;
+    right: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px;
+
+    background: #fbf7f3;
+
+    border: 1px solid #e6dcd6;
+
+    box-shadow: 0 15px 35px rgba(62, 43, 43, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.25s ease;
+  }
+
+  .mobile-menu.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .mobile-menu > button {
+    width: 100%;
+
+    padding: 15px 10px;
+
+    border: none;
+
+    border-bottom: 1px solid #e8ddd7;
+
+    background: transparent;
+
+    color: #514a47;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-align: left;
+
+    cursor: pointer;
+  }
+
+  /* MOBILE LOGIN / LOGOUT */
+
+  .mobile-menu .mobile-auth {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: 1px solid #d8c9c3;
+
+    background: transparent;
+
+    color: #514a47;
+
+    text-align: center;
+  }
+
+  .mobile-menu .mobile-auth svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mobile-menu .mobile-auth:hover {
+    background: #302b2a;
+
+    color: white;
+
+    border-color: #302b2a;
+  }
+
+  /* MOBILE BOOK */
+
+  .mobile-menu .mobile-book {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+
+    padding: 16px;
+
+    border: none;
+
+    background: #302b2a;
+
+    color: white;
+  }
+
+  .mobile-menu .mobile-book:hover {
+    background: #a65e65;
+  }
+
+  /* MOBILE VISIT */
+
+  .mobile-menu .mobile-visit {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px;
+
+    border-bottom: none;
+
+    color: #706866;
+
+    text-align: center;
+  }
+
+  .mobile-menu .mobile-visit:hover {
+    color: #a65e65;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px;
+  }
+
+  .navbar-inner {
+    min-height: 64px;
+
+    padding: 0 12px;
+  }
+
+  .brand-circle {
+    width: 38px;
+    height: 38px;
+
+    font-size: 21px;
+  }
+
+  .brand-info strong {
+    font-size: 22px;
+  }
+
+  .brand-info small {
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .mobile-menu {
+    left: 8px;
+    right: 8px;
+  }
+}
